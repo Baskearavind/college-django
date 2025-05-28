@@ -1,0 +1,29 @@
+{% load static %}
+{% extends 'main/base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<h2>Contact Us</h2>
+
+<p>If you have any questions or want to reach out, please fill out the form below:</p>
+
+<form method="post" action="">
+    {% csrf_token %}
+    <label for="id_name">Name:</label><br>
+    <input type="text" name="name" id="id_name" required><br><br>
+
+    <label for="id_email">Email:</label><br>
+    <input type="email" name="email" id="id_email" required><br><br>
+
+    <label for="id_message">Message:</label><br>
+    <textarea name="message" id="id_message" rows="5" required></textarea><br><br>
+
+    <button type="submit">Send</button>
+</form>
+
+{% if success %}
+    <p style="color: green;">Thank you for your message! We will get back to you soon.</p>
+{% endif %}
+
+{% endblock %}

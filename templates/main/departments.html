@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+{% block title %}Departments{% endblock %}
+{% block content %}
+<h2>Departments</h2>
+<ul>
+    {% for dept in departments %}
+        <li><strong>{{ dept.name }}</strong>: {{ dept.description }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
